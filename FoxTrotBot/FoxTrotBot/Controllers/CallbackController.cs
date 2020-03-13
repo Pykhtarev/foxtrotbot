@@ -37,19 +37,20 @@ namespace FoxTrotBot.Controllers
                     // Отправляем строку для подтверждения 
                     return Ok(_configuration["Config:Confirmation"]);
                 case "message_new":
-                
+                {
+
                     // Десериализация
                     var msg = Message.FromJson(new VkResponse(updates.Object));
 
                     // Отправим в ответ полученный от пользователя текст
                     _vkApi.Messages.Send(new MessagesSendParams
                     {
-                        RandomId = new DateTime(1250).Millisecond,
+                        RandomId = new DateTime(11250).Millisecond,
                         PeerId = msg.PeerId.Value,
                         Message = msg.Text
                     });
                     break;
-                
+                }
             }
 
             // Возвращаем "ok" серверу Callback API
