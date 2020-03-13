@@ -44,7 +44,7 @@ namespace FoxTrotBot.Controllers
                     // Отправим в ответ полученный от пользователя текст
                     _vkApi.Messages.Send(new MessagesSendParams
                     {
-                        RandomId = new Random().Next(),
+                        RandomId = new DateTime(1250).Millisecond,
                         PeerId = msg.PeerId.Value,
                         Message = msg.Text
                     });
