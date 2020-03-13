@@ -45,7 +45,7 @@ namespace FoxTrotBot.Controllers
                     _vkApi.Messages.Send(new MessagesSendParams
                     {
                         RandomId = new DateTime(10000).Millisecond,
-                        PeerId = msg.PeerId,
+                        PeerId = msg.PeerId.Value,
                         Message = msg.Text
                     });
                     break;
