@@ -7,6 +7,7 @@ using VkNet;
 using VkNet.Abstractions;
 using VkNet.Model;
 
+
 namespace FoxTrotBot
 {
     public class Startup
@@ -27,7 +28,7 @@ namespace FoxTrotBot
                 api.Authorize(new ApiAuthParams { AccessToken = Configuration["Config:AccessToken"] });
                 return api;
             });
-            services.AddControllers();
+            services.AddControllers().AddNewtonsoftJson();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
