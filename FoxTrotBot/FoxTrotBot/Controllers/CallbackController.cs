@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using VkNet.Abstractions;
@@ -46,7 +42,7 @@ namespace FoxTrotBot.Controllers
                     _vkApi.Messages.Send(new MessagesSendParams
                     {
                         RandomId = new DateTime(11250).Millisecond,
-                        PeerId = msg.PeerId.Value,
+                        PeerId = msg.PeerId,
                         Message = msg.Text
                     });
                     break;
